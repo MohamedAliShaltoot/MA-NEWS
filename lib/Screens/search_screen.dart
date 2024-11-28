@@ -9,32 +9,51 @@ class SearchScreen extends StatelessWidget {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-        child: Column(
-          children: [
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: "search",
-                hintText: "Search",
-                border: const OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.search),
+        child: Expanded(
+          child: Column(
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Search",
+                  hintText: "Search",
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.search),
+                  ),
                 ),
               ),
+               const SizedBox(height: 30,),
+          ListView.separated(
+              itemBuilder: (BuildContext context, int index) {
+                return   Column(
+                  children: [
+                    Container(
+                    height: 200,
+                    width: 600,
+                    decoration: const BoxDecoration(
+                      color: Colors.amber,
+                    ),
+                                ),
+                                 const SizedBox(height: 10,),
+              const Text("dfgfhfdgjhkfdfdlkfhdfjdfdfdkfdfdfgfhfdgjhkfdfdlkfhdfjdfdfdkfdfhdfhdfdfgfhfdgjhkfdfdlkfhdfjdfdfdkfdfhdf")
+                  ],
+                );
+              },
+              itemCount: 14,
+              separatorBuilder: (BuildContext context, int index) {
+                return const SizedBox(
+                  height: 15,
+                );
+              },
             ),
-             const SizedBox(height: 30,),
-            Container(
-              height: 200,
-              width: 600,
-              decoration: const BoxDecoration(
-                color: Colors.amber,
-              ),
-            ),
-            const SizedBox(height: 10,),
-            const Text("dfgfhfdgjhkfdfdlkfhdfjdfdfdkfdfhdf")
-          ],
+              
+             
+            ],
+          ),
         ),
-      )),
+      ),
+      ),
     );
   }
 }

@@ -65,26 +65,28 @@ class HomeNewsScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
-              return ListTile(
-                trailing: Expanded(
-                  child: Container(
-                    width: 200,
-                    height: 600,
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(15)),
+              return Expanded(
+                child: ListTile(
+                  trailing: Expanded(
+                    child: Container(
+                      width: 200,
+                      height: 600,
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(15)),
+                    ),
                   ),
-                ),
-                title: const Padding(
-                  padding: EdgeInsets.only(bottom: 10),
-                  child: Text(
-                    "2021 most horrible movies and fantastic ",
-                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                  title: const Padding(
+                    padding: EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      "2021 most horrible movies and fantastic ",
+                      style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                    ),
                   ),
-                ),
-                subtitle: const Text(
-                  "The new candyman and hat will he does when it happened. ",
-                  style: TextStyle(color: Colors.black),
+                  subtitle: const Text(
+                    "The new candyman and hat will he does when it happened. ",
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
               );
             },
